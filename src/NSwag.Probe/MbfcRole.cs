@@ -5,6 +5,6 @@
     /// </summary>
     public class MbfcRole
     {
-        public static string ImlementsMicrosoftIDialog { get; set; } = "implements(Mcirosoft.IDialog)";
+        public static string ImlementsMicrosoftIDialog { get; set; } = "implements(Microsoft.IDialog)";
     }
 }

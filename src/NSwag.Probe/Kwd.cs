@@ -27,6 +27,8 @@ namespace NSwag.Probe
 
         public static string Ref { get; set; } = "$ref";
 
+        public static string Required { get; set; } = "required";
+
         public static string OneOf { get; set; } = "oneOf";
 
         public static string Definitions { get; set; } = "definitions";
@@ -37,9 +39,11 @@ namespace NSwag.Probe
 
         public static string Pattern { get; set; } = "pattern";
 
+        public static string PatternProperties { get; set; } = "patternProperties";
+
         public static string Const { get; set; } = "const";
 
-        public static string Designer { get; set; } = "designer";
+        public static string Designer { get; set; } = "$designer";
 
         public static string Path { get; set; } = "path";
 
