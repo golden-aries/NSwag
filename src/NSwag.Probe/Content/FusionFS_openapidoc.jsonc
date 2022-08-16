@@ -1,0 +1,719 @@
+{
+    "x-generator": "NSwag v13.16.1.0 (NJsonSchema v10.7.2.0 (Newtonsoft.Json v12.0.0.0))",
+    "openapi": "3.0.0",
+    "info": {
+      "title": "Fusion FS",
+      "description": "Content management file source",
+      "version": "1.0.0"
+    },
+    "paths": {
+      "/FusionBusApi/e6161e69-5a7f-4e22-855b-cf5c974fe8d4/FileExists": {
+        "post": {
+          "tags": [
+            "CMFusionFSDataSource"
+          ],
+          "operationId": "CMFusionFSDataSource_FileExists",
+          "parameters": [
+            {
+              "name": "path",
+              "in": "query",
+              "required": true,
+              "schema": {
+                "type": "string",
+                "nullable": true
+              },
+              "x-position": 1
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "boolean"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/FusionBusApi/e6161e69-5a7f-4e22-855b-cf5c974fe8d4/DirectoryExists": {
+        "post": {
+          "tags": [
+            "CMFusionFSDataSource"
+          ],
+          "operationId": "CMFusionFSDataSource_DirectoryExists",
+          "parameters": [
+            {
+              "name": "path",
+              "in": "query",
+              "required": true,
+              "schema": {
+                "type": "string",
+                "nullable": true
+              },
+              "x-position": 1
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "boolean"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/FusionBusApi/e6161e69-5a7f-4e22-855b-cf5c974fe8d4/Exists": {
+        "post": {
+          "tags": [
+            "CMFusionFSDataSource"
+          ],
+          "operationId": "CMFusionFSDataSource_Exists",
+          "parameters": [
+            {
+              "name": "path",
+              "in": "query",
+              "required": true,
+              "schema": {
+                "type": "string",
+                "nullable": true
+              },
+              "x-position": 1
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "boolean"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/FusionBusApi/e6161e69-5a7f-4e22-855b-cf5c974fe8d4/GetContainerId": {
+        "get": {
+          "tags": [
+            "CMFusionFSDataSource"
+          ],
+          "operationId": "CMFusionFSDataSource_GetContainerId",
+          "responses": {
+            "200": {
+              "description": "",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "integer",
+                    "format": "int64"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/FusionBusApi/e6161e69-5a7f-4e22-855b-cf5c974fe8d4/Stat": {
+        "post": {
+          "tags": [
+            "CMFusionFSDataSource"
+          ],
+          "operationId": "CMFusionFSDataSource_Stat",
+          "parameters": [
+            {
+              "name": "path",
+              "in": "query",
+              "required": true,
+              "schema": {
+                "type": "string",
+                "nullable": true
+              },
+              "x-position": 1
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "nullable": true,
+                    "oneOf": [
+                      {
+                        "$ref": "#/components/schemas/FileStat"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/FusionBusApi/e6161e69-5a7f-4e22-855b-cf5c974fe8d4/ReadFile": {
+        "post": {
+          "tags": [
+            "CMFusionFSDataSource"
+          ],
+          "operationId": "CMFusionFSDataSource_ReadFile",
+          "parameters": [
+            {
+              "name": "path",
+              "in": "query",
+              "required": true,
+              "schema": {
+                "type": "string",
+                "nullable": true
+              },
+              "x-position": 1
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "content": {
+                "application/octet-stream": {
+                  "schema": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/FusionBusApi/e6161e69-5a7f-4e22-855b-cf5c974fe8d4/Browse": {
+        "post": {
+          "tags": [
+            "CMFusionFSDataSource"
+          ],
+          "operationId": "CMFusionFSDataSource_Browse",
+          "parameters": [
+            {
+              "name": "path",
+              "in": "query",
+              "schema": {
+                "type": "string",
+                "default": "",
+                "nullable": true
+              },
+              "x-position": 1
+            },
+            {
+              "name": "includeContent",
+              "in": "query",
+              "schema": {
+                "type": "boolean",
+                "default": true
+              },
+              "x-position": 2
+            },
+            {
+              "name": "bytes",
+              "in": "query",
+              "schema": {
+                "type": "boolean",
+                "default": true
+              },
+              "x-position": 3
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "nullable": true,
+                    "oneOf": [
+                      {
+                        "$ref": "#/components/schemas/CMFusionFSItemWrapper"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/FusionBusApi/e6161e69-5a7f-4e22-855b-cf5c974fe8d4/Save": {
+        "post": {
+          "tags": [
+            "CMFusionFSDataSource"
+          ],
+          "operationId": "CMFusionFSDataSource_Save",
+          "parameters": [
+            {
+              "name": "includeContent",
+              "in": "query",
+              "schema": {
+                "type": "boolean",
+                "default": false
+              },
+              "x-position": 2
+            },
+            {
+              "name": "bytes",
+              "in": "query",
+              "schema": {
+                "type": "boolean",
+                "default": true
+              },
+              "x-position": 3
+            }
+          ],
+          "requestBody": {
+            "x-name": "model",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "nullable": true,
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/CMFusionFSItemWrapper"
+                    }
+                  ]
+                }
+              }
+            },
+            "x-position": 1
+          },
+          "responses": {
+            "200": {
+              "description": "",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "nullable": true,
+                    "oneOf": [
+                      {
+                        "$ref": "#/components/schemas/CMFusionFSItemWrapper"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/FusionBusApi/e6161e69-5a7f-4e22-855b-cf5c974fe8d4/Create": {
+        "post": {
+          "tags": [
+            "CMFusionFSDataSource"
+          ],
+          "operationId": "CMFusionFSDataSource_Create",
+          "parameters": [
+            {
+              "name": "includeContent",
+              "in": "query",
+              "schema": {
+                "type": "boolean",
+                "default": false
+              },
+              "x-position": 2
+            },
+            {
+              "name": "bytes",
+              "in": "query",
+              "schema": {
+                "type": "boolean",
+                "default": true
+              },
+              "x-position": 3
+            }
+          ],
+          "requestBody": {
+            "x-name": "model",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "nullable": true,
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/CMFusionFSItemWrapper"
+                    }
+                  ]
+                }
+              }
+            },
+            "x-position": 1
+          },
+          "responses": {
+            "200": {
+              "description": "",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "nullable": true,
+                    "oneOf": [
+                      {
+                        "$ref": "#/components/schemas/CMFusionFSItemWrapper"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/FusionBusApi/e6161e69-5a7f-4e22-855b-cf5c974fe8d4/CreateDirectoryRecursive": {
+        "post": {
+          "tags": [
+            "CMFusionFSDataSource"
+          ],
+          "operationId": "CMFusionFSDataSource_CreateDirectoryRecursive",
+          "parameters": [
+            {
+              "name": "path",
+              "in": "query",
+              "required": true,
+              "schema": {
+                "type": "string",
+                "nullable": true
+              },
+              "x-position": 1
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "nullable": true,
+                    "oneOf": [
+                      {
+                        "$ref": "#/components/schemas/FileStat"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/FusionBusApi/e6161e69-5a7f-4e22-855b-cf5c974fe8d4/Delete": {
+        "delete": {
+          "tags": [
+            "CMFusionFSDataSource"
+          ],
+          "operationId": "CMFusionFSDataSource_Delete",
+          "requestBody": {
+            "x-name": "model",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "nullable": true,
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/CMFusionFSItemWrapper"
+                    }
+                  ]
+                }
+              }
+            },
+            "x-position": 1
+          },
+          "responses": {
+            "204": {
+              "description": ""
+            }
+          }
+        }
+      },
+      "/FusionBusApi/e6161e69-5a7f-4e22-855b-cf5c974fe8d4/Move": {
+        "post": {
+          "tags": [
+            "CMFusionFSDataSource"
+          ],
+          "operationId": "CMFusionFSDataSource_Move",
+          "parameters": [
+            {
+              "name": "oldPath",
+              "in": "query",
+              "required": true,
+              "schema": {
+                "type": "string",
+                "nullable": true
+              },
+              "x-position": 1
+            },
+            {
+              "name": "newPath",
+              "in": "query",
+              "required": true,
+              "schema": {
+                "type": "string",
+                "nullable": true
+              },
+              "x-position": 2
+            }
+          ],
+          "responses": {
+            "204": {
+              "description": ""
+            }
+          }
+        }
+      },
+      "/FusionBusApi/e6161e69-5a7f-4e22-855b-cf5c974fe8d4/WriteFile": {
+        "post": {
+          "tags": [
+            "CMFusionFSDataSource"
+          ],
+          "operationId": "CMFusionFSDataSource_WriteFile",
+          "requestBody": {
+            "x-name": "model",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "nullable": true,
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/CMFusionFSItemWrapper"
+                    }
+                  ]
+                }
+              }
+            },
+            "x-position": 1
+          },
+          "responses": {
+            "200": {
+              "description": "",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "nullable": true,
+                    "oneOf": [
+                      {
+                        "$ref": "#/components/schemas/CMFusionFSItemWrapper"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/FusionBusApi/e6161e69-5a7f-4e22-855b-cf5c974fe8d4/Glob": {
+        "post": {
+          "tags": [
+            "CMFusionFSDataSource"
+          ],
+          "operationId": "CMFusionFSDataSource_Glob",
+          "requestBody": {
+            "x-name": "globParameters",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "nullable": true,
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/GlobParametersWrapper"
+                    }
+                  ]
+                }
+              }
+            },
+            "x-position": 1
+          },
+          "responses": {
+            "200": {
+              "description": "",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "array",
+                    "nullable": true,
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "components": {
+      "schemas": {
+        "FileStat": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "isDir": {
+              "type": "boolean"
+            },
+            "size": {
+              "type": "integer",
+              "format": "int64"
+            },
+            "created": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "modified": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "id": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        },
+        "CMFusionFSItemWrapper": {
+          "allOf": [
+            {
+              "$ref": "#/components/schemas/FusionEntityTable"
+            },
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "IsFolder": {
+                  "type": "boolean"
+                },
+                "Path": {
+                  "type": "string",
+                  "nullable": true
+                },
+                "ParentPath": {
+                  "type": "string",
+                  "nullable": true
+                },
+                "ByteContent": {
+                  "type": "string",
+                  "format": "byte",
+                  "nullable": true
+                },
+                "StringContent": {
+                  "type": "string",
+                  "nullable": true
+                },
+                "CreatedString": {
+                  "type": "string",
+                  "nullable": true
+                },
+                "Children": {
+                  "type": "array",
+                  "nullable": true,
+                  "items": {
+                    "$ref": "#/components/schemas/CMFusionFSItemWrapper"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "FusionEntityTable": {
+          "allOf": [
+            {
+              "$ref": "#/components/schemas/FusionEntity"
+            },
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "Id": {
+                  "type": "integer",
+                  "format": "int64"
+                },
+                "Created": {
+                  "type": "string",
+                  "format": "date-time"
+                }
+              }
+            }
+          ]
+        },
+        "FusionEntity": {
+          "allOf": [
+            {
+              "$ref": "#/components/schemas/FusionGlobalIdentifiable"
+            },
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "Name": {
+                  "type": "string",
+                  "nullable": true
+                },
+                "Description": {
+                  "type": "string",
+                  "nullable": true
+                }
+              }
+            }
+          ]
+        },
+        "FusionGlobalIdentifiable": {
+          "allOf": [
+            {
+              "$ref": "#/components/schemas/MarshalByRefObject"
+            },
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "Uid": {
+                  "type": "string",
+                  "format": "guid"
+                }
+              }
+            }
+          ]
+        },
+        "MarshalByRefObject": {
+          "type": "object",
+          "x-abstract": true,
+          "additionalProperties": false
+        },
+        "GlobParametersWrapper": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "Path": {
+              "type": "string",
+              "nullable": true
+            },
+            "Include": {
+              "type": "array",
+              "nullable": true,
+              "items": {
+                "type": "string"
+              }
+            },
+            "Exclude": {
+              "type": "array",
+              "nullable": true,
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "BusPath": "DataSource/Internal"
+  }

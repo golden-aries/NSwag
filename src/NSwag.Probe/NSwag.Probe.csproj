@@ -17,6 +17,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="Content\FusionFS_openapidoc.jsonc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="Content\mbfc_custom_action_schema_sample.jsonc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -26,7 +29,7 @@
     <None Update="Content\mbfc_sdk.schema.jsonc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Content\Random_Sentence_Generator_Bus.jsonc">
+    <None Update="Content\Random_Sentence_Generator_Bus_openapidoc.jsonc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
