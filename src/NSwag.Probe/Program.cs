@@ -91,11 +91,11 @@ foreach (var o in od.Operations)
         }
     }
 
-    //props.Add(Kwd.Path, new JObject
-    //{
-    //    [Kwd.Type] = JType.String,
-    //    [Kwd.Const] = o.Path
-    //});
+    props.Add(Kwd.Path, new JObject
+    {
+        [Kwd.Type] = JType.String,
+        [Kwd.Const] = o.Path
+    });
 
     operations.Add(MbfcSdkDefs.OperationId(o.Operation), j);
     var result = j.ToString();
