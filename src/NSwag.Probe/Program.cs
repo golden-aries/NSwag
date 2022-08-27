@@ -44,6 +44,14 @@ foreach (var o in od.Operations)
         Console.WriteLine($"Type: {p.Schema.Type}");
         Console.WriteLine($"Format: {p.Schema.Format}");
     }
+    foreach(var r in o.Operation.Responses)
+    {
+        Console.WriteLine($"- {r}");
+        Console.WriteLine($"Key: {r.Key}");
+        Console.WriteLine($"Value: {r.Value}");
+        Console.WriteLine($"Type: {r.Value.Schema.Type}");
+        Console.WriteLine($"Format: {r.Value.Schema.Format}");
+    }
 }
 #endregion
 
@@ -51,6 +59,10 @@ var operations = od.PrepareInitialSchemas();
 
 var mbfcSdk = await fp.ParseJObjectAsync("Content/mbfc_sdk.schema.jsonc");
 mbfcSdk.ExtendMbfcSchemaWithOperations(operations);
+
+//od = await fp.ParseOpenApiDocument("Content/FusionFS_openapidoc.jsonc");
+//operations = od.PrepareInitialSchemas();
+//mbfcSdk.ExtendMbfcSchemaWithOperations(operations);
 
 // write modified MBFC SDK Schema json to file
 var modifiedSdkJson = mbfcSdk.ToString();

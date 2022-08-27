@@ -13,6 +13,7 @@ namespace NSwag.Probe
         {
             { JsonObjectType.Integer,  MbfcSdkDefs.IntegerExpression },
             { JsonObjectType.String, MbfcSdkDefs.StringExpression },
+            { JsonObjectType.Boolean, MbfcSdkDefs.BooleanExpression }
         };
     }
 }

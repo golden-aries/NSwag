@@ -13,6 +13,8 @@ namespace NSwag.Probe
         public static string IntegerExpression { get; set; } = "integerExpression";
         public static string StringExpression { get; set; } = "stringExpression";
 
+        public static string BooleanExpression { get; set; } = "booleanExpression";
+
         /// <summary>
         /// extends keyword as "schema:#/definitions/" + definition
         /// </summary>
